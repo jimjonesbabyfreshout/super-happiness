@@ -1,14 +1,20 @@
-vpn_name: Super-Happiness
-vpn_description: Advanced Custom VPN using GitHub Pages
-vpn_location: US East
-vpn_protocol: OpenVPN
-vpn_port: 1194
-vpn_username: username
-vpn_password: password
-domain_name: super-happiness.com
-ssl_certificate: /path/to/ssl_certificate.crt
-production: true
-future_proof: true
-optimize: true
-extend: true
-customize: true
+vpn:
+  name: Super-Happiness
+  description: Advanced Custom VPN using GitHub Pages
+  location: US East
+  protocol: OpenVPN
+  port: 1194
+  credentials:
+    username: username
+    password: password
+
+domain:
+  name: super-happiness.com
+  ssl_certificate: /path/to/ssl_certificate.crt
+
+settings:
+  production: true
+  future_proof: true
+  optimize: true
+  extend: true
+  customize: true
