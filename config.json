@@ -1,0 +1,75 @@
+{
+  "authentication": {
+    "passwordRequired": true,
+    "usernameRequired": true,
+    "minimumPasswordLength": 8,
+    "maximumPasswordLength": 64,
+    "allowedCharacters": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-`~,./'[]:;",
+    "bannedWords": ["password", "123456", "qwerty"]
+  },
+  "security": {
+    "rateLimit": {
+      "maxRequests": 100,
+      "timeWindow": 60
+    },
+    "bruteForceProtection": {
+      "maxAttempts": 5,
+      "timeWindow": 60
+    },
+    "crossSiteRequestForgeryProtection": {
+      "enabled": true
+    },
+    "contentSecurityPolicy": {
+      "enabled": true,
+      "policies": [
+        {
+          "type": "script-src",
+          "values": [
+            "'self'",
+            "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          ]
+        },
+        {
+          "type": "style-src",
+          "values": [
+            "'self'",
+            "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.2/darkly/bootstrap.min.css"
+          ]
+        },
+        {
+          "type": "img-src",
+          "values": [
+            "'self'",
+            "https://avatars.githubuserdata.com/*"
+          ]
+        }
+      ]
+    }
+  },
+  "performance": {
+    "gzipCompression": {
+      "enabled": true
+    },
+    "brotliCompression": {
+      "enabled": true
+    },
+    "imageOptimization": {
+      "enabled": true
+    },
+    "lazyLoading": {
+      "enabled": true
+    }
+  },
+  "logging": {
+    "level": "info",
+    "appenders": [
+      {
+        "type": "console"
+      },
+      {
+        "type": "file",
+        "path": "./logs/application.log"
+      }
+    ]
+  }
+}
