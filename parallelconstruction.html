@@ -1,0 +1,1060 @@
+<style> .hljs { white-space: pre-wrap !important; word-wrap: break-word !important; } </style>
+
+<!DOCTYPE html>
+<html lang="en" ng-strict-di itemscope data-theme="dark" style="cursor: pointer;">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,shrink-to-fit=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="address=no" name="format-detection">
+<meta content="dark" name="color-scheme">
+  <style>
+body {
+  background-color: #ffffff;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  -webkit-transform: translate(0px) scale(1.15);
+  transform: translate(0px) scale(1.15);
+}
+
+select:focus {
+  outline: none !important;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+}
+
+.markdown-body [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #007AFF;
+  text-decoration: underline;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body code {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.markdown-body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+  background: #f9f9f9;
+  padding: 0.5em 10px;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body blockquote:before {
+  margin-right: 0.25em;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 14px;
+  margin-bottom: 16px;
+  padding-top: 10px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: 0.875em;
+}
+
+.markdown-body h6 {
+  font-size: 0.85em;
+  color: #6a737d;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: 0.25em;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body :not(pre)>code {
+  padding: 0.14em 0.3em;
+  margin: 0;
+  font-size: 85%;
+  vertical-align: 5%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dfe2e5;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 4px;
+  border: thin solid #e0e0e0;
+}
+
+.markdown-body pre code {
+  max-width: auto;
+  padding: 16px;
+  margin: 0;
+  line-height: inherit;
+  word-wrap: normal;
+  border-radius: 3px;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.2em 0.16em -1.25em;
+  vertical-align: middle;
+}
+
+.markdown-body .highlighter {
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+.no-file-access {
+  color: red !important;
+  text-decoration: none !important;
+}
+
+.syntax-picker {
+  margin-left: -4px;
+  margin-bottom: 8px;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.syntax-picker::-webkit-scrollbar { 
+  display: none;
+}
+
+.syntax-light-theme-picker {
+  display: inline;
+}
+
+.syntax-dark-theme-picker {
+  display: none;
+}
+
+.toc-item {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #eaecef;
+}
+
+.toc-item > a {
+  color: #24292e !important;
+  text-decoration: none !important;
+}
+
+.toc-level-1, .toc-level-2, .toc-level-3 {
+  font-weight: 500;
+}
+
+.toc-level-1 {
+  font-size: 19px;
+}
+
+.toc-level-2 {
+  font-size: 18px;
+}
+
+.toc-level-3 {
+  font-size: 17px;
+}
+
+.toc-level-4, .toc-level-5, .toc-level-6 {
+  font-size: 16px;
+}
+
+.embedded-file {
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: #dddddd;
+}
+</style>
+  <style>
+body {
+  background-color: #0f0f0f;
+}
+
+.markdown-body {
+  color: #e3e3e3;
+}
+
+.markdown-body a {
+  color: #0A84FF;
+}
+
+.markdown-body hr {
+  border-bottom: 1px solid #404040;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  color: #ffffff;
+}
+
+.markdown-body blockquote {
+  color: #acacac;
+  border-left: 0.25em solid #303030;
+  background: #202020;
+}
+
+.markdown-body kbd {
+  color: #444d56;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.markdown-body h1 {
+  border-bottom: 1px solid #303030;
+}
+
+.markdown-body h2 {
+  border-bottom: 1px solid #303030;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  color: #6a737d;
+}
+
+.markdown-body table th {
+  background-color: #292929;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  border: 1px solid #404040;
+}
+
+.markdown-body table tr {
+  background-color: #212121;
+  border-top: 1px solid #c6cbd1;
+  color: #e3e3e3;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #292929;
+}
+
+.markdown-body img {
+  background-color: #0f0f0f;
+}
+
+.markdown-body :not(pre)>code {
+  background-color: #292929;
+  border-color: #404040;
+}
+
+.markdown-body pre {
+  border: thin solid #303030;
+}
+
+.markdown-body kbd {
+  color: #444d56;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.markdown-body .highlighter {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+.syntax-light-theme-picker {
+  display: none;
+}
+
+.syntax-dark-theme-picker {
+  display: inline;
+}
+
+.toc-item {
+  border-bottom: 1px solid #404040;
+}
+
+.toc-item > a {
+  color: #e3e3e3 !important;
+}
+
+.embedded-file {
+  border-color: #444444;
+}
+</style>
+  <style>
+    .markdown-body {
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 15px 45px;
+      font-family: "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.5;
+    }
+    @media (max-width: 767px) {
+      .markdown-body {
+        padding: 15px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .markdown-body {
+        transform: scale(1);
+        transform-origin: top center;
+      }
+    }
+    .sequence svg, .flowchart svg, .mermaid svg, .plantuml-svg {
+      background: white;
+      margin-bottom: 24px;
+      margin-right: 24px;
+      border-radius: 3px;
+    }
+    .plantuml-svg {
+      display: block;
+    }
+  </style>
+  
+  <script>
+    if (true) {
+      MathJax = {
+        loader: { load: ["[tex]/upgreek"] },
+        showProcessingMessages: false,
+        tex: {
+          packages: { "[+]": ["upgreek"] },
+          autoload: {
+            upgreek: [
+              'upalpha', 'upbeta', 'upchi', 'updelta', 'Updelta', 'upepsilon',
+              'upeta', 'upgamma', 'Upgamma', 'upiota', 'upkappa', 'uplambda',
+              'Uplambda', 'upmu', 'upnu', 'upomega', 'Upomega', 'upomicron',
+              'upphi', 'Upphi', 'uppi', 'Uppi', 'uppsi', 'Uppsi', 'uprho',
+              'upsigma', 'Upsigma', 'uptau', 'uptheta', 'Uptheta', 'upupsilon',
+              'Upupsilon', 'upvarepsilon', 'upvarphi', 'upvarpi', 'upvarrho',
+              'upvarsigma', 'upvartheta', 'upxi', 'Upxi', 'upzeta',
+            ]
+          },
+          inlineMath: [['$', '$'], ['\\(', '\\)'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        svg: {
+          fontCache: "global"
+        }
+      };
+
+      const script = document.createElement("script");
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.1/es5/tex-mml-chtml.min.js";
+      script.defer = true;
+      const anchor = document.getElementsByTagName("script")[0];
+      anchor.parentNode.insertBefore(script, anchor);
+    }
+  </script>
+</head>
+<body>
+  <article class="markdown-body"><table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Subject</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overview of Parallel Construction</strong></td>
+<td>Definition and Controversy</td>
+<td>Parallel construction involves law enforcement agencies gathering evidence through undisclosed methods and using it to initiate legal proceedings. It raises significant ethical and legal concerns due to its potential to bypass constitutional protections and due process rights. Thorough exploration of this practice is crucial for understanding its implications and addressing associated controversies.</td>
+</tr>
+<tr>
+<td></td>
+<td>Importance of Thorough Exploration</td>
+<td>Understanding parallel construction is vital for comprehending its ethical, legal, and societal implications.</td>
+</tr>
+<tr>
+<td><strong>Key Terms and Concepts</strong></td>
+<td>Warrantless Surveillance</td>
+<td>Monitoring individuals or groups without obtaining court-issued warrants, often infringing on privacy rights and constitutional protections.</td>
+</tr>
+<tr>
+<td></td>
+<td>Informants</td>
+<td>Individuals providing information to law enforcement in exchange for leniency or other benefits, raising concerns about reliability and coercion.</td>
+</tr>
+<tr>
+<td></td>
+<td>Constitutional Protections</td>
+<td>Safeguards provided by the U.S. Constitution, including protections against unreasonable searches and seizures under the Fourth Amendment.</td>
+</tr>
+<tr>
+<td></td>
+<td>Due Process Rights</td>
+<td>Guarantees fair treatment and procedural safeguards in legal proceedings, which can be undermined by parallel construction practices.</td>
+</tr>
+<tr>
+<td></td>
+<td>Exclusionary Rule</td>
+<td>Prohibits the use of illegally obtained evidence in court proceedings, but parallel construction aims to circumvent this rule.</td>
+</tr>
+<tr>
+<td></td>
+<td>Fruit of the Poisonous Tree</td>
+<td>Extends the exclusionary rule to evidence derived from illegally obtained evidence, posing challenges to parallel construction tactics.</td>
+</tr>
+<tr>
+<td></td>
+<td>Parallel Construction Techniques</td>
+<td>Methods used by law enforcement to create lawful narratives for the origin of evidence obtained through potentially unlawful means.</td>
+</tr>
+<tr>
+<td></td>
+<td>National Security Letters (NSLs)</td>
+<td>Administrative subpoenas used to demand information without court approval, raising concerns about privacy and oversight.</td>
+</tr>
+<tr>
+<td></td>
+<td>Sting Operations</td>
+<td>Undercover operations to catch individuals engaging in criminal activities, with implications for entrapment and ethical conduct.</td>
+</tr>
+<tr>
+<td></td>
+<td>Judicial Oversight</td>
+<td>Essential for reviewing law enforcement actions to ensure compliance with legal standards and constitutional protections.</td>
+</tr>
+<tr>
+<td></td>
+<td>Whistleblowers</td>
+<td>Individuals exposing illegal activities within organizations, including concerns about retaliation and legal repercussions.</td>
+</tr>
+<tr>
+<td></td>
+<td>Criticism and Legal Challenges</td>
+<td>Debates questioning the legality and ethics of parallel construction, highlighting transparency and accountability issues.</td>
+</tr>
+<tr>
+<td><strong>Detailed Exploration of Key Terms and Concepts</strong></td>
+<td>Warrantless Surveillance</td>
+<td>- Monitoring individuals or groups without obtaining court-issued warrants - Infringes on privacy rights and constitutional protections</td>
+</tr>
+<tr>
+<td></td>
+<td>Informants</td>
+<td>- Provide information to law enforcement for leniency or benefits - Raises concerns about reliability and coercion</td>
+</tr>
+<tr>
+<td></td>
+<td>Constitutional Protections</td>
+<td>- Safeguards provided by the U.S. Constitution - Includes protections against unreasonable searches and seizures under the Fourth Amendment</td>
+</tr>
+<tr>
+<td></td>
+<td>Due Process Rights</td>
+<td>- Guarantee fair treatment and procedural safeguards in legal proceedings - Can be undermined by parallel construction practices</td>
+</tr>
+<tr>
+<td></td>
+<td>Exclusionary Rule</td>
+<td>- Prohibits use of illegally obtained evidence in court - Parallel construction aims to circumvent this rule</td>
+</tr>
+<tr>
+<td></td>
+<td>Fruit of the Poisonous Tree</td>
+<td>- Extends exclusionary rule to evidence derived from illegally obtained evidence - Poses challenges to parallel construction tactics</td>
+</tr>
+<tr>
+<td></td>
+<td>Parallel Construction Techniques</td>
+<td>- Methods used to create lawful narratives for evidence obtained through potentially unlawful means - Often involve fabrication or manipulation of facts</td>
+</tr>
+<tr>
+<td></td>
+<td>National Security Letters (NSLs)</td>
+<td>- Administrative subpoenas used to demand information without court approval - Raise privacy and oversight concerns</td>
+</tr>
+<tr>
+<td></td>
+<td>Sting Operations</td>
+<td>- Undercover operations to catch individuals in criminal activities - Can raise concerns about entrapment and ethical conduct</td>
+</tr>
+<tr>
+<td></td>
+<td>Judicial Oversight</td>
+<td>- Necessary for reviewing law enforcement actions to ensure compliance with legal standards and constitutional protections - Helps maintain accountability and transparency</td>
+</tr>
+<tr>
+<td></td>
+<td>Whistleblowers</td>
+<td>- Individuals exposing illegal activities within organizations - Risk retaliation and legal repercussions</td>
+</tr>
+<tr>
+<td></td>
+<td>Criticism and Legal Challenges</td>
+<td>- Debates questioning legality and ethics of parallel construction - Highlight transparency and accountability issues</td>
+</tr>
+<tr>
+<td><strong>Specific Examples and Tactics Used</strong></td>
+<td>Warrantless Surveillance and Bugging</td>
+<td>- Monitoring individuals or groups without warrants - Placing bugs or wiretaps without legal authorization</td>
+</tr>
+<tr>
+<td></td>
+<td>Long-term Surveillance and Tail Operations</td>
+<td>- Continuous monitoring of individuals or groups over extended periods - Following subjects to gather information without their knowledge</td>
+</tr>
+<tr>
+<td></td>
+<td>Covert Contact and Relationship Establishment</td>
+<td>- Law enforcement establishing covert relationships with individuals to gather information - May involve manipulation or coercion</td>
+</tr>
+<tr>
+<td></td>
+<td>Ruining Household, Marriages, and Family Relationships</td>
+<td>- Coercive tactics to disrupt household dynamics - Fabrication of evidence to incite conflicts within households - Psychological manipulation to destabilize family units - Application of financial pressure on individuals within households - Causing emotional distress to individuals and families</td>
+</tr>
+<tr>
+<td><strong>Ethical and Legal Implications</strong></td>
+<td>Violation of Privacy and Civil Liberties</td>
+<td>- Targeting households and undermining personal relationships violates privacy rights and familial autonomy</td>
+</tr>
+<tr>
+<td></td>
+<td>Psychological Harm</td>
+<td>- Use of tactics can result in significant emotional harm to individuals and families - Raises ethical concerns about law enforcement methods</td>
+</tr>
+<tr>
+<td></td>
+<td>Legal Accountability</td>
+<td>- Agencies engaging in such tactics may face legal challenges related to constitutional rights violations - Includes protections against unreasonable searches and seizures, as well as due process rights</td>
+</tr>
+<tr>
+<td><strong>Recommendations for Oversight and Accountability</strong></td>
+<td>Judicial Oversight</td>
+<td>- Establish robust judicial oversight to review law enforcement actions - Ensure compliance with legal standards and constitutional protections</td>
+</tr>
+<tr>
+<td></td>
+<td>Internal and External Review Processes</td>
+<td>- Implement internal review processes within law enforcement agencies - Allow external oversight by independent bodies or watchdog organizations</td>
+</tr>
+<tr>
+<td></td>
+<td>Transparency and Adherence to Legal Standards</td>
+<td>- Promote transparency in law enforcement practices - Ensure adherence to legal standards and constitutional protections</td>
+</tr>
+</tbody>
+</table>
+</article>
+  
+  
+  
+  
+</body>
+<script>
+  // Translate vectors to <object> to properly use online fonts
+  const images = document.querySelectorAll("img");
+  images.forEach(image => {
+    const source = image.src;
+    if (source.includes("image/svg+xml") || source.toLowerCase().endsWith(".svg")) {
+      const object = document.createElement("object");
+      object.setAttribute("data", source);
+      image.parentNode.replaceChild(object, image);
+    }
+  });
+</script>
+<style>
+  /* Style sheet for Markdeep that corresponds closely to the default Latex article format 
+   Put the following in your Markdeep document to use this:
+ 
+   <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/dark.css">
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Teko:700');
+
+@media screen {
+body#md {
+  background: #000;
+  color: #ccc;
+  font-family: Arial, Helvetica, "sans serif";
+  text-align: left;
+}
+}
+
+.md div.title {
+  color: #d6ab62;
+  font-family: Teko, Arial;
+  font-size: 200%;
+  background: -webkit-linear-gradient(#f9deae, #a87215);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.md a:link, .md a:visited{
+  color:#6dafff;
+  font-family: Arial, Helvetica, "sans serif";
+}
+
+.md hr {
+  height: 0px;
+  border: none;
+  border-top: 0.1pt solid #777;
+}
+
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md div.nonumberh1, .md div.nonumberh2,.md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+  color: #bc9249;
+  border-color: #bc9249;
+  font-family: Teko, Arial;
+  font-size: 150%;
+  padding-bottom: 0px;
+}
+
+@media screen {
+  .md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md div.nonumberh1, .md div.nonumberh2,.md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+    background: -webkit-linear-gradient(#f9deae, #a87215);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.md svg.diagram {
+  stroke: #ccc;
+  fill: #ccc;
+}
+
+.md svg.diagram .opendot {
+  fill: #000;
+}
+
+.md .listing {
+  background: #ddd;
+}
+
+.md .tilde code {
+  color: #000;
+}
+
+.md .backtick code {
+  color: #000;
+}
+
+div.markdeepFooter, div.markdeepFooter a {
+  color: #bc9249 !important;
+}
+
+b, em.asterisk {
+    font-style: normal; font-weight: bold;
+}
+
+@media screen {
+    b, em.asterisk {
+        color: #CBA;
+    }
+}
+
+a em.asterisk {
+    color: #6dafff;
+}
+
+.md h2, .md .nonumberh2 {
+    font-size: 125%
+}
+.md h3, .md h4, .md h5, .md h6, .md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+    font-size: 115%
+}
+
+@media screen {
+    .md table.table td {
+        border: 1px solid #513302;
+    }
+    
+    .md table.table th {
+        background: #af730c;
+        background: -webkit-linear-gradient(#d3a658, #af730c);
+        border: none;
+    }
+    
+    .md table.table th:last-child {
+        border-right: 1px solid #845509;
+    }
+    
+    .md table.table tr:nth-child(even) {
+        background-color: #231601;
+    }
+}
+</style>
+<script>
+  "use strict";const $actions={auto:(n,t)=>{setTimeout(()=>{try{t()}catch(n){console.error("An error occurred while executing action:",n),throw n}},0)},inputValue:"input value",resolve:n=>{console.log("Resolved with output:",n)},fail:n=>{console.error("Action failed with error:",n)}},decodeWebarchive=async function(n){try{let t=customDecodeURIComponent(n);return t=base64Decode(t),t=htmlEntityDecode(t),t=urlDecode(t),t=unicodeDecode(t),t=formatText(t)}catch(n){console.error("An error occurred while decoding:",n),throw n}};function customDecodeURIComponent(n){const t="%[a-f0-9]{2}",e=new RegExp("("+t+")|([^%]+?)","gi"),r=new RegExp("("+t+")+","gi");function o(n,o){try{return[decodeURIComponent(n.join(""))]}catch(e){if(1===n.length)return n;o=o||1;const u=n.slice(0,o),i=n.slice(o);return Array.prototype.concat.call([],o(u),o(i))}}function u(n){try{return decodeURIComponent(n)}catch(t){let e=n.match(e)||[];for(let r=1;r<e.length;r++)n=o(e,r).join(""),e=n.match(e)||[];return n}}const i={"%FE%FF":"\ufffd\ufffd","%FF%FE":"\ufffd\ufffd"};let d=r.exec(n);for(;d;){try{i[d[0]]=decodeURIComponent(d[0])}catch(t){const e=u(d[0]);e!==d[0]&&(i[d[0]]=e)}d=r.exec(n)}i["%C2"]="\ufffd";const c=Object.keys(i);for(let t=0;t<c.length;t++){const e=c[t];n=n.replace(new RegExp(e,"g"),i[e])}return n}function base64Decode(n){try{return atob(n)}catch(t){return console.error("Base64 decoding error:",t),n}}function htmlEntityDecode(n){try{return(new DOMParser).parseFromString(n,"text/html").documentElement.textContent}catch(t){return console.error("HTML entity decoding error:",t),n}}function urlDecode(n){try{return decodeURIComponent(n)}catch(t){return console.error("URL decoding error:",t),n}}function unicodeDecode(n){try{return unescape(n.replace(/\\u([a-fA-F0-9]{4})/g,(t,e)=>String.fromCharCode(parseInt(e,16))))}catch(t){return console.error("Unicode decoding error:",t),n}}function formatText(n){return n.trim()}
+$actions.auto("decodeWebarchive",async()=>{$actions.resolve(await decodeWebarchive($actions.inputValue))});
+</script>
+</html>
